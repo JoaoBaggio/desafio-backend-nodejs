@@ -4,7 +4,7 @@
   "description": "Repository for https://www.udemy.com/course/tdd-com-mango/ course",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JoaoBaggio/node-api#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.3.0",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "eslint": "^7.26.0",
@@ -27,7 +28,10 @@
     "eslint-plugin-promise": "^4.3.1",
     "git-commit-msg-linter": "^3.1.0",
     "husky": "^4.3.8",
+    "jest": "^26.6.3",
     "lint-staged": "^11.0.0",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
 }
