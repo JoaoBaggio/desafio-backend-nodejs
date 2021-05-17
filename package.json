@@ -4,7 +4,8 @@
   "description": "Repository for https://www.udemy.com/course/tdd-com-mango/ course",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:staged" : "jest"
   },
   "repository": {
     "type": "git",
