@@ -2,11 +2,13 @@ export default {
 
   // clearMocks: true,
 
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/**/index.ts'],
 
   coverageDirectory: 'coverage',
 
-  coverageProvider: 'v8',
+  coveragePathIgnorePatterns: ['interfaces', '<rootDir>/src/presentation/controllers/signup/signup-protocols.ts'],
+
+  // coverageProvider: 'v8',
 
   roots: [
     '<rootDir>/src'
