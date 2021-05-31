@@ -1,4 +1,4 @@
-import { Encrypter } from '../../protocols/encrypter'
+import { Encrypter } from './adb-add-account-protocols'
 import { DBAddAccount } from './db-add-account'
 
 interface SutTypes{
