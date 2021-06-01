@@ -2,11 +2,11 @@ module.exports = {
 
   // clearMocks: true,
 
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/**/index.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/**/*index.ts', '!<rootDir>/src/**/*protocols.ts'],
 
   coverageDirectory: 'coverage',
 
-  coveragePathIgnorePatterns: ['interfaces', '<rootDir>/src/presentation/controllers/signup/signup-protocols.ts'],
+  coveragePathIgnorePatterns: ['interfaces'],
 
   // coverageProvider: 'v8',
 
