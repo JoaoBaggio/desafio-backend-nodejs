@@ -1,7 +1,6 @@
 module.exports = {
 
   // clearMocks: true,
-  preset: '@shelf/jest-mongodb',
   collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/**/*index.ts', '!<rootDir>/src/**/*protocols.ts'],
 
   coverageDirectory: 'coverage',
@@ -9,6 +8,7 @@ module.exports = {
   coveragePathIgnorePatterns: ['interfaces'],
 
   // coverageProvider: 'v8',
+  preset: '@shelf/jest-mongodb',
 
   roots: [
     '<rootDir>/src'
@@ -18,6 +18,8 @@ module.exports = {
 
   transform: {
     '.+\\.ts$': 'ts-jest'
-  }
+  },
+
+  watchPathIgnorePatterns: ['globalConfig']
 
 }
