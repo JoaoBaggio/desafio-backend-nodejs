@@ -1,7 +1,7 @@
 module.exports = {
 
   // clearMocks: true,
-
+  preset: '@shelf/jest-mongodb',
   collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/**/*index.ts', '!<rootDir>/src/**/*protocols.ts'],
 
   coverageDirectory: 'coverage',
