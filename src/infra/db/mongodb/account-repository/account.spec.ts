@@ -18,6 +18,11 @@ describe('Account Mongo Repository', () => {
     await MongoHelper.connect(uri)
   })
 
+  beforeEach(async () => {
+    const accountCollection = MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
+  })
+
   afterAll(async () => {
     await MongoHelper.disconnect()
     await mongod.stop()
