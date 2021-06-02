@@ -1,5 +1,5 @@
 import { Encrypter, AccountModel, AddAccountModel, AddAccountRepository } from './adb-add-account-protocols'
-import { DBAddAccount } from './db-add-account'
+import { DbAddAccount } from './db-add-account'
 
 const makeEncrypter = (): Encrypter => {
   class EncrypterStub implements Encrypter {
@@ -26,7 +26,7 @@ const makeAddAccountRepository = (): AddAccountRepository => {
 }
 
 interface SutTypes{
-  sut: DBAddAccount
+  sut: DbAddAccount
   encrypterStub: Encrypter
   addAccountRepositoryStub: AddAccountRepository
 }
@@ -34,7 +34,7 @@ interface SutTypes{
 const makeSut = (): SutTypes => {
   const encrypterStub = makeEncrypter()
   const addAccountRepositoryStub = makeAddAccountRepository()
-  const sut = new DBAddAccount(encrypterStub, addAccountRepositoryStub)
+  const sut = new DbAddAccount(encrypterStub, addAccountRepositoryStub)
   return { sut, encrypterStub, addAccountRepositoryStub }
 }
 

@@ -1,6 +1,6 @@
 import { AccountModel, AddAccount, AddAccountModel, Encrypter, AddAccountRepository } from './adb-add-account-protocols'
 
-export class DBAddAccount implements AddAccount {
+export class DbAddAccount implements AddAccount {
   private readonly encrypter: Encrypter
   private readonly addAccountRepository: AddAccountRepository
 
