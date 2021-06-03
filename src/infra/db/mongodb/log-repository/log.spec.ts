@@ -3,15 +3,15 @@ import { MongoMemoryServer } from 'mongodb-memory-server'
 import { MongoHelper } from '../helpers/mongo-helpers'
 import { LogMongoRepository } from './log'
 
-const mongod = new MongoMemoryServer()
+const makeSut = (): LogMongoRepository => {
+  return new LogMongoRepository()
+}
+
 describe('Log mongo Repository', () => {
   let errorCollection: Collection
+  const mongod = new MongoMemoryServer()
   beforeAll(async () => {
     const uri = await mongod.getUri()
-    // const port = await mongod.getPort()
-    // const dbPath = await mongod.getDbPath()
-    // const dbName = await mongod.getDbName()
-    // console.log(uri, port, dbPath, dbPath, dbName)
     await MongoHelper.connect(uri)
   })
 
@@ -25,7 +25,7 @@ describe('Log mongo Repository', () => {
     await mongod.stop()
   })
   it('Should create an error log on sucess', async () => {
-    const sut = new LogMongoRepository()
+    const sut = makeSut()
     await sut.logError('any_error')
     const count = await errorCollection.countDocuments()
     expect(count).toBe(1)
