@@ -1,5 +1,5 @@
-import { MongoHelper as sut } from './mongo-helpers'
 import { MongoMemoryServer } from 'mongodb-memory-server'
+import { MongoHelper as sut } from './mongo-helpers'
 
 const mongod = new MongoMemoryServer()
 

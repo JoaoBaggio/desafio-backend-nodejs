@@ -1,6 +1,6 @@
+import { MongoMemoryServer } from 'mongodb-memory-server'
 import { MongoHelper } from '../helpers/mongo-helpers'
 import { AccountMongoRepository } from './account'
-import { MongoMemoryServer } from 'mongodb-memory-server'
 
 const mongod = new MongoMemoryServer()
 
