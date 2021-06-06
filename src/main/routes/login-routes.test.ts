@@ -5,7 +5,7 @@ import app from '../config/app'
 
 const mongod = new MongoMemoryServer()
 
-describe('SignUp Routes', () => {
+describe('Login Routes', () => {
   beforeAll(async () => {
     const uri = await mongod.getUri()
     // const port = await mongod.getPort()
@@ -24,15 +24,17 @@ describe('SignUp Routes', () => {
     await MongoHelper.disconnect()
     await mongod.stop()
   })
-  it('Should return an account on success', async () => {
-    await request(app)
-      .post('/api/signup')
-      .send({
-        name: 'Joao',
-        email: 'joao@gmail.com',
-        password: '123',
-        passwordConfirmation: '123'
-      })
-      .expect(200)
+  describe('POST /signup', () => {
+    it('Should return 200 on signup', async () => {
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Joao',
+          email: 'joao@gmail.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(200)
+    })
   })
 })
