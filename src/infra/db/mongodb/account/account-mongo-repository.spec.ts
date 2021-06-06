@@ -1,7 +1,7 @@
 import { Collection } from 'mongodb'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import { MongoHelper } from '../helpers/mongo-helpers'
-import { AccountMongoRepository } from './account'
+import { AccountMongoRepository } from './account-mongo-repository'
 
 const mongod = new MongoMemoryServer()
 
