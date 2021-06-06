@@ -1,4 +1,0 @@
-
-> api@1.0.0 test
-> jest --passWithNoTests --silent --noStackTrace --runInBand
-
