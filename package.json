@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Repository for https://www.udemy.com/course/tdd-com-mango/ course",
   "main": "index.js",
   "scripts": {
