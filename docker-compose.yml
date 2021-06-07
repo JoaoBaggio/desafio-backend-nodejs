@@ -20,7 +20,7 @@ services:
         restart: always
         image: node:16
         working_dir: /usr/src/app
-        command: bash -c "npm install --production npm run debug"
+        command: bash -c "npm install --production && npm run debug"
         volumes:
             - ./package.json:/usr/src/app/package.json
             - ./dist:/usr/src/app/dist
