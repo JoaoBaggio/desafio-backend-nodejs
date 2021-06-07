@@ -109,3 +109,5 @@ globalConfig.json
 
 #mongoData
 data
+
+!src/data
