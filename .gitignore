@@ -111,3 +111,5 @@ globalConfig.json
 data
 
 !src/data
+
+PostgreSQL

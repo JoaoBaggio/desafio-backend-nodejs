@@ -29,3 +29,17 @@ services:
             - "9222:9222"
         links:
             - mongo
+            - dbSql
+            
+    dbSql:
+        container_name: psql-container
+        image: postgres
+        restart: always
+        ports:
+            - "15432:5432"
+        volumes:
+            - ./PostgreSQL:/var/lib/postgresql/data 
+        environment:
+            POSTGRES_PASSWORD: baggio123
+            POSTGRES_USER: baggio
+            POSTGRES_DB: totvs
