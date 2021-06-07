@@ -1,10 +1,11 @@
-import { MongoHelper } from '../infra/db/mongodb/helpers/mongo-helpers'
 import env from './config/env'
 
-const { port, mongoUrl } = env
+require('../infra/db/postgresql/db_client');
 
-MongoHelper.connect(mongoUrl)
-  .then(async () => {
-    const app = (await import('./config/app')).default
-    app.listen(port, () => console.log(`Server running at http://localhost:${port}`))
-  }).catch(console.error)
+(async () => {
+  const { port } = env
+  const app = (await import('./config/app')).default
+  app.listen(port, () => console.log(`Server running at http://localhost:${port}`))
+})().catch(err => {
+  console.error(err)
+})

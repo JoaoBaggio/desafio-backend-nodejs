@@ -14,10 +14,10 @@ export = {
     migrations: {
       tableName: 'db_migrations',
       schemaName: 'public',
-      directory: './src/infra/db/postgresql/migrations'
+      directory: '../../infra/db/postgresql/migrations'
     },
     seeds: {
-      directory: './src/infra/db/postgresql/seeds'
+      directory: '../../infra/db/postgresql/seeds'
     }
   },
 

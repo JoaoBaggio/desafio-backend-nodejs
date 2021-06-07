@@ -12,7 +12,6 @@ module.exports = {
   coveragePathIgnorePatterns: ['interfaces'],
 
   // coverageProvider: 'v8',
-  preset: '@shelf/jest-mongodb',
 
   roots: [
     '<rootDir>/src'
