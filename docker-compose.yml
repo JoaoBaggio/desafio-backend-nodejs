@@ -10,10 +10,16 @@ services:
             - ./package.json:/usr/src/app/package.json
             - ./dist/:/usr/src/app/dist/
         ports: 
-            - "5050:5050"
+            - "15050:5050"
             - "9222:9222"
         links:
             - dbSql
+        environment:
+            - POSTGRES_PASSWORD=baggio123
+            - POSTGRES_USER=baggio
+            - POSTGRES_DB=totvs
+            - POSTGRES_PORT=5432
+            - POSTGRES_HOST=dbSql
             
     dbSql:
         container_name: psql-container
@@ -22,7 +28,7 @@ services:
         ports:
             - "15432:5432"
         volumes:
-            - ./PostgreSQL:/var/lib/postgresql/data 
+            - ./PostgreSQL/:/var/lib/postgresql/data/
         environment:
             POSTGRES_PASSWORD: baggio123
             POSTGRES_USER: baggio

@@ -1,15 +1,17 @@
 // Update with your config settings.
 
+import env from './env'
+
 export = {
 
   development: {
     client: 'postgresql',
     connection: {
-      host: 'localhost',
-      port: '15432',
-      database: 'totvs',
-      user: 'baggio',
-      password: 'baggio123'
+      host: env.psqlHost,
+      port: env.psqlPort,
+      database: env.database,
+      user: env.user,
+      password: env.password
     },
     migrations: {
       tableName: 'db_migrations',
