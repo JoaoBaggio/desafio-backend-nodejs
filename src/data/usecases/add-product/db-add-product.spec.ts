@@ -2,6 +2,7 @@ import { ProductModel } from '../../../domain/models/product'
 import { AddProductModel } from '../../../domain/usecases/add-product'
 import { AddProductRepository } from '../../protocols/db/product/add-product-repository'
 import { DbAddProduct } from './db-add-product'
+import { InvalidParamError } from '../../../presentation/errors'
 
 const makeAddProductRepository = (): AddProductRepository => {
   class AddProductRepositoryStub implements AddProductRepository {
@@ -50,5 +51,16 @@ describe('DbAddProduct', () => {
     jest.spyOn(addProductRepositoryStub, 'add').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
     const promise = sut.add(makeFakeProductData())
     await expect(promise).rejects.toThrow()
+  })
+
+  it('Should return InvalidParamError if factor is invalid', async () => {
+    const { sut } = makeSut()
+    const promise = sut.add({
+      name: 'any_name',
+      image: 'any_base64Image',
+      description: 'any_description',
+      factor: 'D'
+    })
+    await expect(promise).rejects.toEqual(new InvalidParamError('factor'))
   })
 })
