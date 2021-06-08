@@ -1,4 +1,6 @@
 export default {
+  dbUrl: process.env.DATABASE_URL ?? 'postgres://baggio:baggio123@localhost:5432/totvs',
+  redis_url: process.env.REDIS_URL ?? 'redis://localhost:6379',
   port: process.env.PORT ?? 5050,
   jwtSecret: process.env.JWT_SECRET ?? 'QYvj52@%',
   schema: process.env.DATABSE_SCHEMA ?? 'core',

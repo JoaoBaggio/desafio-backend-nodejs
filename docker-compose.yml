@@ -22,6 +22,8 @@ services:
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=dbSql
             - REDIS_HOST=redis
+            - DATABASE_URL=postgres://baggio:baggio123@dbSql:5432/totvs
+            - REDIS_URL=redis://redis:6379
             
     dbSql:
         container_name: psql-container

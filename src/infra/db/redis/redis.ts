@@ -3,7 +3,7 @@ import { KeyServiceRepository } from '../../../data/protocols/key-service/key-se
 import env from '../../../main/config/env'
 
 export class RedisRepository implements KeyServiceRepository {
-  private readonly client = redis.createClient(Number(env.redisPort), env.redisHost)
+  private readonly client = redis.createClient(env.redis_url)
   async get (key: string): Promise<any | null> {
     return await new Promise((resolve, reject) => {
       this.client.get(key, (err, reply) => {
