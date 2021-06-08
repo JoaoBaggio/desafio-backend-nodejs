@@ -1,5 +1,5 @@
 import { ProductModel } from '../../../domain/models/product'
-import { ListProductRepository } from '../../protocols/db/product/list-product-repository'
+import { ListProductRepository } from '../../protocols/db/product/product-repository'
 import { DbListProduct } from './db-list-product'
 
 const makeListProductRepository = (): ListProductRepository => {

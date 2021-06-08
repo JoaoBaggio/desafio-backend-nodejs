@@ -1,7 +1,7 @@
 import { ProductModel } from '../../../domain/models/product'
 import { AddProductModel } from '../../../domain/usecases/add-product'
 import { AddProductRepository } from '../../protocols/db/product/product-repository'
-import { DbProduct } from './db-add-product'
+import { DbAddProduct } from './db-add-product'
 
 const makeAddProductRepository = (): AddProductRepository => {
   class AddProductRepositoryStub implements AddProductRepository {
@@ -28,14 +28,14 @@ const makeFakeProduct = (): ProductModel => ({
 })
 
 interface SutTypes{
-  sut: DbProduct
+  sut: DbAddProduct
   addProductRepositoryStub: AddProductRepository
 
 }
 
 const makeSut = (): SutTypes => {
   const addProductRepositoryStub = makeAddProductRepository()
-  const sut = new DbProduct(addProductRepositoryStub)
+  const sut = new DbAddProduct(addProductRepositoryStub)
   return { sut, addProductRepositoryStub }
 }
 describe('DbAddProduct', () => {
