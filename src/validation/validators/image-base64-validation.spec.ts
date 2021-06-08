@@ -1,7 +1,7 @@
 import { InvalidParamError } from '../../presentation/errors'
 import { ImageBase64Validation } from './image-base64-validation'
 const makeSut = (): ImageBase64Validation => {
-  return new ImageBase64Validation()
+  return new ImageBase64Validation('image')
 }
 
 describe('CompareFieldValidation', () => {
