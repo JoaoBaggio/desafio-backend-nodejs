@@ -16,7 +16,9 @@
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
-    "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
+    "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
+    "migration": "knex migrate:latest --knexfile src/main/config/knexfile.ts",
+    "seed": "knex seed:run --knexfile src/main/config/knexfile.ts"
   },
   "repository": {
     "type": "git",
