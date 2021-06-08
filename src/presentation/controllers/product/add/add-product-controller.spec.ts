@@ -1,8 +1,8 @@
-import { ProductModel } from '../../../domain/models/product'
-import { AddProduct, AddProductModel } from '../../../domain/usecases/add-product'
-import { MissingParamError, ServerError } from '../../errors'
-import { badRequest, serverError } from '../../helpers/http/http-helpers'
-import { HttpRequest } from '../../protocols'
+import { ProductModel } from '../../../../domain/models/product'
+import { AddProduct, AddProductModel } from '../../../../domain/usecases/add-product'
+import { MissingParamError, ServerError } from '../../../errors'
+import { badRequest, serverError } from '../../../helpers/http/http-helpers'
+import { HttpRequest } from '../../../protocols'
 import { AddProductController } from './add-product-controller'
 import { Validation } from './add-product-controller-protocols'
 

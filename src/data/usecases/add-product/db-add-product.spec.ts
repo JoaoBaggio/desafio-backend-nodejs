@@ -1,10 +1,11 @@
 import { ProductModel } from '../../../domain/models/product'
 import { AddProductModel } from '../../../domain/usecases/add-product'
-import { AddProductRepository } from '../../protocols/db/product/add-product-repository'
-import { DbAddProduct } from './db-add-product'
+import { AddProductRepository } from '../../protocols/db/product/product-repository'
+import { DbProduct } from './db-add-product'
 
 const makeAddProductRepository = (): AddProductRepository => {
   class AddProductRepositoryStub implements AddProductRepository {
+    list: () => Promise<[ProductModel]>
     async add (product: AddProductModel): Promise <ProductModel> {
       return await new Promise(resolve => resolve(makeFakeProduct()))
     }
@@ -27,14 +28,14 @@ const makeFakeProduct = (): ProductModel => ({
 })
 
 interface SutTypes{
-  sut: DbAddProduct
+  sut: DbProduct
   addProductRepositoryStub: AddProductRepository
 
 }
 
 const makeSut = (): SutTypes => {
   const addProductRepositoryStub = makeAddProductRepository()
-  const sut = new DbAddProduct(addProductRepositoryStub)
+  const sut = new DbProduct(addProductRepositoryStub)
   return { sut, addProductRepositoryStub }
 }
 describe('DbAddProduct', () => {

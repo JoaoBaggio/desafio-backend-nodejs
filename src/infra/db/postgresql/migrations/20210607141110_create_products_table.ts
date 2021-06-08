@@ -3,7 +3,7 @@ import * as Knex from 'knex'
 export async function up (knex: Knex): Promise<void> {
   await knex.schema.withSchema('core').createTable('products', (table: Knex.TableBuilder) => {
     table.increments('id').primary().index()
-    table.string('name').unique().notNullable()
+    table.string('name').notNullable()
     table.text('description').notNullable()
     table.text('image').notNullable()
     table.enu('factor', ['A', 'B', 'C']).notNullable()
