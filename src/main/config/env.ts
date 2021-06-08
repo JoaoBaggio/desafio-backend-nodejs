@@ -9,5 +9,7 @@ export default {
   database: process.env.POSTGRES_DB ?? 'totvs',
   env: process.env.NODE_ENV ?? 'development',
   redisPort: process.env.REDIS_PORT ?? 6379,
-  redisHost: process.env.REDIS_HOST ?? 'localhost'
+  redisHost: process.env.REDIS_HOST ?? 'localhost',
+  pagarmeToken: 'ak_test_Fdo1KyqBTdnTFeLgBhkgRcgm9hwdzd',
+  pagarmeURL: 'https://api.pagar.me/1/transactions'
 }

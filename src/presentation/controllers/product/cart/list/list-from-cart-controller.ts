@@ -12,8 +12,8 @@ export class ListProductsFromCartController implements Controller {
       const error = this.validation.validate(httpRequest.headers)
       if (error) return badRequest(error)
       const { accesstoken } = httpRequest.headers
-      const product = await this.listProductFromCart.list(accesstoken)
-      return ok({ product })
+      const products = await this.listProductFromCart.list(accesstoken)
+      return ok(products)
     } catch (error) {
       return serverError(error)
     }

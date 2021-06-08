@@ -6,7 +6,7 @@ export class KsListProductCart implements ListProductFromCart {
   constructor (
     private readonly keyServiceRepository: KeyServiceRepository) {}
 
-  async list (accesstoken: string): Promise<any> {
+  async list (accesstoken: string): Promise<Object> {
     const cart = await this.keyServiceRepository.get(accesstoken)
     if (cart) {
       return this.addMetrics(cart)
@@ -15,7 +15,7 @@ export class KsListProductCart implements ListProductFromCart {
     }
   }
 
-  addMetrics (cart: any[]): any[] {
+  addMetrics (cart: any[]): Object {
     let totalWithOutDiscont: number = 0
     let totalProductsFactorA: number = 0
     let totalProductsFactorB: number = 0
@@ -40,7 +40,6 @@ export class KsListProductCart implements ListProductFromCart {
       Math.min(totalProductsFactorB * 5, 15) +
       Math.min(totalProductsFactorC * 10, 30))
     const total = (1 - (discont / 100)) * totalWithOutDiscont
-    cart.push({ total, discont, totalWithOutDiscont, totalItens })
-    return cart
+    return { cart, metrics: { total, discont, totalWithOutDiscont, totalItens } }
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { Router } from 'express'
 import { adaptRoute } from '../adapters'
-import { makeAddProductController, makeAddProductToCartController, makeListProductController, makeListProductsFromCartController, makeRemoveProductToCartController } from '../factories/controllers/Product/product-controller-factory'
+import { makeAddProductController, makeAddProductToCartController, makeListProductController, makeListProductsFromCartController, makeRemoveProductToCartController } from '../factories/controllers/product/product-controller-factory'
 
 export default (router: Router): void => {
   router.post('/addproduct', adaptRoute(makeAddProductController()))
