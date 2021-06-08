@@ -7,5 +7,7 @@ export default {
   user: process.env.POSTGRES_USER ?? 'baggio',
   password: process.env.POSTGRES_PASSWORD ?? 'baggio123',
   database: process.env.POSTGRES_DB ?? 'totvs',
-  env: process.env.NODE_ENV ?? 'development'
+  env: process.env.NODE_ENV ?? 'development',
+  redisPort: process.env.REDIS_PORT ?? 6379,
+  redisHost: process.env.REDIS_HOST ?? 'localhost'
 }
