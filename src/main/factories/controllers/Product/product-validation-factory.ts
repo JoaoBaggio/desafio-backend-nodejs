@@ -21,3 +21,11 @@ export const makeAddProductToCartValidation = (): ValidationComposite => {
   }
   return new ValidationComposite(validations)
 }
+
+export const makeListProductsFromCartValidation = (): ValidationComposite => {
+  const validations: Validation[] = []
+  for (const field of ['accesstoken']) {
+    validations.push(new RequiredFieldValidation(field))
+  }
+  return new ValidationComposite(validations)
+}

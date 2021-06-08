@@ -1,19 +1,18 @@
-import { AddProductToCart } from '../../../../../domain/usecases/add-product-to-cart'
+import { ListProductFromCart } from '../../../../../domain/usecases/list-product-from-cart'
 import { badRequest, ok, serverError } from '../../../../helpers/http/http-helpers'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../../../protocols'
 
-export class AddProductToCartController implements Controller {
+export class ListProductsFromCartController implements Controller {
   constructor (
-    private readonly addProductToCart: AddProductToCart,
+    private readonly listProductFromCart: ListProductFromCart,
     private readonly validation: Validation) {}
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const { id } = httpRequest.params
-      const { accesstoken } = httpRequest.headers
-      const error = this.validation.validate({ id, accesstoken })
+      const error = this.validation.validate(httpRequest.headers)
       if (error) return badRequest(error)
-      const product = await this.addProductToCart.add(accesstoken, id)
+      const { accesstoken } = httpRequest.headers
+      const product = await this.listProductFromCart.list(accesstoken)
       return ok({ product })
     } catch (error) {
       return serverError(error)
