@@ -12,11 +12,11 @@ describe('CompareFieldValidation', () => {
     })
     expect(error).toEqual(new InvalidParamError('image'))
   })
-  it('Should return true if validation succeds', () => {
+  it('Should return null if validation succeds', () => {
     const sut = makeSut()
     const error = sut.validate({
-      image: 'iVBORw0KGgoAAAAN ... kSuQmCC'
+      image: 'aGVsbG8gd29ybGQ='
     })
-    expect(error).toBeTruthy()
+    expect(error).toBeNull()
   })
 })
