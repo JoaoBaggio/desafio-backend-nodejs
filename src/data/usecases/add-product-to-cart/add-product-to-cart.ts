@@ -11,7 +11,7 @@ export class KsAddProductToCart implements AddProductToCart {
     if (cart) {
       const index = cart.findIndex(x => x.id === Number(id))
       if (index >= 0) {
-        cart[index].amount = String(Number(cart[index].amount) + 1)
+        cart[index].amount = Number(cart[index].amount) + 1
       } else {
         const product = await Product.query().findById(id)
         const cartProduct = {

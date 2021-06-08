@@ -14,7 +14,7 @@ export const makeAddProductValidation = (): ValidationComposite => {
   return new ValidationComposite(validations)
 }
 
-export const makeAddProductToCartValidation = (): ValidationComposite => {
+export const makeAlterProductToCartValidation = (): ValidationComposite => {
   const validations: Validation[] = []
   for (const field of ['id', 'accesstoken']) {
     validations.push(new RequiredFieldValidation(field))
