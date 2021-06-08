@@ -5,6 +5,7 @@ export class Product extends Model {
   name: string
   description: string
   image: string
+  value: number
   factor: string
 
   static get tableName (): string {

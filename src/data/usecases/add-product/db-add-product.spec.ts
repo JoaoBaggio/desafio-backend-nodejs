@@ -16,6 +16,7 @@ const makeFakeProductData = (): AddProductModel => ({
   name: 'any_name',
   image: 'any_base64Image',
   description: 'any_description',
+  value: 50,
   factor: 'A'
 })
 
@@ -24,6 +25,7 @@ const makeFakeProduct = (): ProductModel => ({
   name: 'any_name',
   image: 'any_base64Image',
   description: 'any_description',
+  value: 50,
   factor: 'A'
 })
 

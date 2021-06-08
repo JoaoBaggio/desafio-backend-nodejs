@@ -5,7 +5,7 @@ import { FactorValidation } from '../../../../validation/validators/factor-valid
 
 export const makeAddProductValidation = (): ValidationComposite => {
   const validations: Validation[] = []
-  for (const field of ['name', 'description', 'image', 'factor']) {
+  for (const field of ['name', 'description', 'image', 'value', 'factor']) {
     validations.push(new RequiredFieldValidation(field))
   }
   validations.push(new ImageBase64Validation('image'))

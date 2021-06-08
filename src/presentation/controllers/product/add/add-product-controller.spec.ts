@@ -29,6 +29,7 @@ const makeFakeProduct = (): ProductModel => ({
   name: 'any_name',
   description: 'any_description',
   image: 'any_password',
+  value: 50,
   factor: 'any_factor'
 })
 
@@ -37,6 +38,7 @@ const makeFakeRequest = (): HttpRequest => ({
     name: 'any_name',
     description: 'any_description',
     image: 'any_password',
+    value: 50,
     factor: 'any_factor'
   }
 })
@@ -82,6 +84,7 @@ describe('SignUp Controller', () => {
       name: 'any_name',
       description: 'any_description',
       image: 'any_password',
+      value: 50,
       factor: 'any_factor'
     })
   })

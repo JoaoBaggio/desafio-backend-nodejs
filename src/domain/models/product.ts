@@ -4,5 +4,6 @@ export interface ProductModel {
   name: string
   description: string
   image: string
+  value: number
   factor: string
 }
