@@ -4,7 +4,7 @@ import env from '../../../main/config/env'
 
 export class RedisRepository implements KeyServiceRepository {
   private readonly client = redis.createClient(Number(env.redisPort), env.redisHost)
-  async get (key: string): Promise<Object | null> {
+  async get (key: string): Promise<any | null> {
     return await new Promise((resolve, reject) => {
       this.client.get(key, (err, reply) => {
         if (err ?? reply === null) {
@@ -22,7 +22,7 @@ export class RedisRepository implements KeyServiceRepository {
         if (err ?? reply === null) {
           resolve(null)
         } else {
-          resolve(JSON.parse(reply))
+          resolve(true)
         }
       })
     })
