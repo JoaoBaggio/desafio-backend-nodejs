@@ -41,7 +41,10 @@ export = {
 
   production: {
     client: 'postgresql',
-    connection: env.dbUrl + '?ssl=true',
+    connection: {
+      connectionString: env.dbUrl,
+      ssl: { rejectUnauthorized: false }
+    },
     migrations: {
       tableName: 'db_migrations',
       schemaName: 'public',
